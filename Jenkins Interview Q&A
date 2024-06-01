@@ -1,0 +1,393 @@
+Jenkins:
+=======
+
+1.   What is Jenkins & Explain jenkins pre-requisites?
+Jenkins is an open-source tool 
+its written in Java that automates software development lifecycle tasks like build, test, deploy, and more..
+
+Prerequisites. 
+Minimum hardware requirements: 256 MB of RAM.and 1 GB of drive space 
+(although 10 GB is a recommended minimum if running Jenkins as a Docker container)
+
+2.   Name Some other integration tools other than jenkins?
+Travis CI
+GITLAB CI
+GITHUB ACTION
+AWS Code build
+AZURE DEVOPS CODE
+CIRCLE CI
+CODE FREASH
+
+3.   What is Continous Integration?
+continuous integration is automating the build and test processes,
+so that whenever a developer pushes code changes to the repository, 
+the changes are automatically built and tested in an isolated environment.
+
+Popular CI tools include Jenkins, Travis CI, CircleCI, and GitLab CI/CD
+
+
+
+4.   What is Difference continuous integration, continuous delivery and continuous deployment?
+
+continuous integration
+======================
+-->CI is a automating the build and test processes,  
+-->whenever a developer pushes code changes to the repository, 
+-->the changes are automatically built and tested in an isolated environment.
+
+->some Popular CI tools include Jenkins, Travis CI, CircleCI, and GitLab CI/CD
+
+continuous delivery
+===================
+after the code build and tested in  continuous integration(CI), 
+the software undergoes further automated testing and deployment processes, 
+such as  acceptance testing, and deployment to pre-production environments.
+
+continuous deployment
+=====================
+CD is an extension of continuous delivery where every change that passes through the CI/CD pipeline is automatically deployed to production without manual intervention.
+
+5.   Mention some of the plugins which you have used in your project?
+Git Plugin
+Maven Integration Plugin
+sonar-scanner plugin
+Docker Plugin
+Kubernetes 
+Jira  
+Blue Ocean.
+
+
+6.   How will you integrate jenkins with GITHUB?
+To integrate Jenkins with GitHub, the following steps:
+
+-->Install the Git plugin & GitHub plugin in jenkins 
+-->Go to GitHub repository and click Settings
+-->Click on Webhooks and then click on Add webhook
+
+-->In the Payload URL field, paste your Jenkins environment URL
+-->In the Build Triggers section, select "GitHub hook trigger for GITScm polling"
+-->In the Build section, add the build steps that you want Jenkins to execute when it triggers a build
+
+-->Use GitHub URLs to pull source code into Jenkins
+-->Use GitHub webhooks to trigger Jenkins to build jobs 
+
+
+7.   What are the types of pipelines in jenkins?
+Jenkins have a two pipelines, they are declarative and scripted. 
+ 
+-->Declarative pipelines is a automation tools  that support CI/CD pipelines. 
+-->IN Declarative pipelines the Pipeline's contain's stages, steps, and conditions. 
+-->A stage is a collection of steps that are executed sequentially in the declarative pipeline. 
+-->declarative pipelines use a more structured and predefined format syntax.
+-->Declarative pipelines support code validation, before executing any stage.
+-->Declarative pipelines break down stages into multiple steps.
+
+-->A scripted pipeline is a sequence of stages in Jenkins that perform CI/CD-related tasks. 
+-->Scripted pipelines are flexible and powerful, but require some knowledge of Groovy
+-->it is the original pipeline syntax for Jenkins and it written by Groovy Languages.
+-->Scripted pipelines are the first version  while declarative pipelines are more recent. 
+-->Scripted pipelines is an imperative programming model, while declarative pipelines is a declarative programming model.
+
+
+8.   Difference between Free Style Job & Pipeline Job?
+
+A freestyle job executes everything in the agent, while a pipeline job translates pipeline code to atomic commands that are sent to the agents.
+
+Freestyle jobs are used to simple jobs for a project,
+while Pipeline jobs are suitable for building pipelines for complex jobs.
+
+ 
+Freestyle jobs configured through the web UI, and options obtained by installing plugins, 
+while pipeline based on DSL(Domain Specific Language) language code, and are used to write a pipeline flow of the project. 
+
+
+
+
+9.   Difference between Scripted Pipeline & Declartive pipeline?
+
+Scripted and declarative pipelines are different approch of "pipeline-as-code" principle. 
+
+-->Scripted pipelines are the first version, while declarative pipelines are more recent. 
+-->Scripted pipelines is an imperative programming model, while declarative pipelines is a declarative programming model.
+-->Scripted pipelines use a Groovy scripting language syntax, while declarative pipelines use a more structured and predefined format.
+-->Scripted pipelines are flexible and powerful, but require some knowledge of Groovy. while Declarative pipelines are easy to write and understand, but use a more structured and predefined syntax.
+
+
+10.  What is the process to configure Third-party tools in Jenkins?
+
+-->Install the third-party software.
+-->Then install a Jenkins plugin supporting the third-party tool.
+-->Now, configure the tool from the Manage Jenkins section.
+Finally, our plugin is ready to be used.
+
+
+11.  What are some of the default environmental variables in Jenkins? 
+
+Here are some default environment variables in Jenkins: 
+BUILD_NUMBER:               The current build number 
+BUILD_ID:                   The current build ID 
+BUILD_DISPLAY_NAME:         The display name of the current build 
+JOB_NAME:                   The name of the project 
+BUILD_TAG:                  A string of "jenkins-\(JOB_{N}AME-\){BUILD_NUMBER}" 
+BRANCH_NAME:                The name of the branch being built for a multibranch project 
+JOB_URL:                    The full URL of the job
+ 
+
+
+12. What is JenkinsFile?
+IN Scripted Pipeline:A Jenkinsfile is a text file that defines a Jenkins Pipeline. 
+It's written in Groovy, a programming language, 
+and it describe the entire build process of a Jenkins Pipeline. 
+
+IN Declarative pipelines:A Jenkinsfile defines a Pipeline's stages, steps, and conditions. 
+A stage is a collection of steps that are executed sequentially. 
+
+
+13. What is MultiBranch Pipeline?
+IN multibranch pipeline,Jenkins allows users to implement different Jenkinsfiles, for different branches, of the same project.
+In a Multibranch Pipeline project, Jenkins automatically discovers, manages and executes Pipelines for branches, which contain a Jenkinsfile in source control.
+
+No manual management: Users can implement different Jenkinsfiles for different branches without having to manually create and manage pipelines.
+
+
+14. How will you secure your jenkins Server in Cloud & On-Prem?
+cloud
+-->Use HTTPS and SSL for Secure access to the Jenkins server 
+-->Manage user roles and protect credentials,
+-->Configure user authentication and authorization
+-->Configure firewalls
+-->Enable audit logging 
+-->Update vulnerable plugins and audit plugins
+-->Keep instance updated, including its plugins.
+
+15. What are the security mechanisms jenkins used to autheticate users?
+Jenkins uses a number of security mechanisms to authenticate users:
+-->API tokens
+Users need to authenticate themselves with an API token to access the Jenkins API. 
+API tokens can also allow third-party applications or scripts to interact with Jenkins.
+
+-->Access control
+Access control is the main mechanism for securing a Jenkins environment against unauthorized usage.
+
+-->Audit logs
+Audit logs are records of events and actions, that occur within the Jenkins system, 
+such as job builds, user logins, and configuration changes.
+
+-->LDAP server
+Jenkins can use a lightweight Directory Access Protocol (LDAP) server to authenticate users.
+
+-->User database
+Jenkins can run its own user database, and perform access control based on the permission/user matrix. 
+
+
+
+16. How will you upgrade jenkins from one version to other version?
+ some steps to upgrade Jenkins:
+-->Stop the Jenkins server
+-->Back up Jenkins
+-->Back up the current Jenkins version binary
+
+-->Download the latest Jenkins WAR file
+-->Copy the WAR file to /opt/bitnami/jenkins directory
+-->Restart Jenkins
+
+-->Validate the upgrade to confirm that all plugins and jobs are loaded
+-->Upgrade the required plugins 
+
+
+17. How will you backup jenkins Server?
+
+-->Attach an external disk to Jenkins server
+-->Mount the disk to the server on a folder, say /jenkins_data
+
+-->Move all data from /var/lib/jenkins to /
+-->Use the Backup plugin
+
+-->Write a shell script for backups
+
+
+18. Explain your CICD Pipeline?
+A CI/CD pipeline is a set of automated steps and tools that automate the building and testing of software. It's a fundamental component of automated software development
+
+
+
+19. How many ways jenkins will trigger the job/pipeline?
+
+Manual build trigger : Manually trigger a build at any time by clicking the Build Now 
+
+Automatic Build trigger : Triggers can be used to automatically start builds based on various events or conditions. 
+
+-->Trigger builds remotely
+-->Build after other projects are built
+-->Build periodically
+-->GitHub hook trigger for GITScm polling
+-->Poll SCM
+
+Multibranch pipeline
+The Multibranch Pipeline project type enables you to configure different jobs for different branches of the same project.
+
+Post actions
+Jenkins supports 10 special action conditions which are running when these conditions meet. They are related to run status and can be defined in the post block both for the whole pipeline and per-stage. 
+
+
+
+20. How will you fix the broken pipeline?
+
+Check the logs
+Update the parameters
+
+-->In Jenkins, in the pipeline where failure occurred, in the pane, select the latest build, and click Console Output.
+On the Console Output page, check the logs to find the reason for the failure.
+
+-->If required, update the parameters in the deployment input configuration file.
+
+21. Can you tell me any recent issue which you have faced in jenkins?
+ome common issues with Jenkins:
+Jenkins fails to start
+-->Check the Jenkins logs for error messages. Also, verify that the required Java version is installed and properly configured. 
+-->Check the port number conflicts with other services running on the machine.
+
+Pipeline failure issues
+-->In Jenkins, in the pipeline where the failure occurred, in the navigation pane, click Rebuild.
+
+Code duplication
+-->As pipeline jobs increase, so can the possibility of the code duplicating. This is because a part of the build/automation process can remain the same for most of these jobs.
+
+
+
+22. How will you configure third party plugins in jenkins
+
+-->Install the third-party software.
+-->Then install a Jenkins plugin supporting the third-party tool.
+-->Now, configure the tool from the Manage Jenkins section.
+-->Finally, your plugin is ready to be used.
+
+
+
+23. Can you list me some Default environment variables in jenkins?
+BUILD_NUMBER
+BUILD_ID:
+BUILD_DISPLAY_NAME
+BUILD_TAG:
+JENKINS_HOME
+JENKINS_URL
+JOB_URL
+BUILD_URL
+WORKSPACE
+
+
+25. What version of jenkins currently ur using in your Project?
+   
+    2.44 version of jenkins currently
+
+26. Can you write ur CICD Pipeline script and explain in detail?
+
+27. Diff btw Build Trigger & POLL SCM?
+In Jenkins, a build trigger is a mechanism that starts a job or pipeline. 
+A build trigger is a rule that initiates a new build based on certain events.
+
+Poll SCM is a type of build trigger that runs a build job in Jenkins at a scheduled time. 
+Poll SCM periodically checks the SCM for changes and triggers a job if new commits are pushed.
+
+
+
+some differences between build triggers and Poll SCM:
+Build periodically: Triggers a job periodically even if nothing has changed.
+Poll SCM: Checks for changes before triggering any build. If there are changes to the previous version, then a build will be triggered.
+Build trigger: Starts the execution of a Jenkins job or pipeline.
+Poll SCM: Automates the process for monitoring the changes in the source code repository. 
+
+
+
+
+24. Why we need Master Slave Setup in Jenkins,How will you setup Master & Slave in jenkins
+
+  explain the steps in detail?
+
+(https://medium.com/@dksoni4530/jenkins-master-slave-architecture-setup-f0486fba8039)
+
+What is Jenkins?
+Jenkins is an open-source tool written in Java that automates software development lifecycle tasks like build, test, deploy, and more. In this article, we will discuss how to configure Jenkins master-slave setup also called master-slave or master-agent architecture.
+
+
+Jenkins
+Why do we need Master-Slave architecture?
+When we build the Jenkins job in a single Jenkins master node then Jenkins uses the resource of the base machine and If no executor is available then the jobs are queued in the Jenkins server. Sometimes you might need several different environments to test your builds. A single Jenkins server cannot do this. It is recommended not to run different jobs in the same system that required a different environment. In such scenarios where we need a different machine with a different environment that takes the specific job from the master to build.
+
+On the same Jenkins setup, multiple teams are working on their jobs. All jobs are running on the same base operating system and the base operating system has limited resources. Also, we don’t want to put our data on the same system where other teams can read it.
+
+
+Jenkins Master-Slave
+Jenkins Distributed Architecture
+Jenkins uses A Master-Slave architecture to manage distributed builds. The machine where we install Jenkins software will be Jenkins master and that runs on port 8080 by default. On the slave machine, we install a program called Agent. This agent requires JVM. This agent executes the tasks provided by the Jenkins master. We can launch n numbers of agents and we can configure which task will be run on which agent server from Jenkins master by assigning the agent to the task.
+
+Prerequisites:
+2 Linux servers
+For this tutorial, I have already created 2 linux machines and named them as Jenkins-Master & Jenkins-Slave.
+
+
+Ubuntu Servers
+Now, let’s start this setup by installing Jenkins and configuring further.
+
+Step 1: Install Jenkins on Master Node
+Jenkins is built on Java so, to install Jenkins we first need to install Java on the linux server.
+Run the below command on the Jenkins master node.
+sudo apt install openjdk-11-jdk -y
+The above commands will install Java on the Jenkins master node.
+Run the below commands on the Jenkins master node.
+wget -p -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins -y
+The above commands will install Jenkins on the Jenkins master node.
+Step 2: Install Java on the Agent Node
+On the agent node we don’t actually need to install the Jenkins however, jenkins only works when java is installed so we just need to install java on the agent node.
+Run the below command to install java on the agent node
+sudo apt install openjdk-11-jdk -y
+Now, our setup is ready. We will configure the master-agent architecture now.
+
+Step 3: Configuring the Master-Agent setup
+Go the Jenkins UI and click on Set up and agent
+
+Add agent
+Add the node name as per your choice
+
+Agent node
+Add the below details
+
+Add the description as per your need
+Number of executors: This indicates that how many parallel jobes this node will execute. As of now I have set it to 2
+Remote root directory: Whenever we create any job in the jenkins it will create workspace in the backend, however we have not installed Jenkins in the agent node so, we need to define any directory for the workspace. As of now I have set it to /opt/build
+Labels: Add some label so that we can select node based on the label for executing the job
+Usage: Set this parameter to Use the node as much as possible so that we can fully utilise the node
+Launch method: Set this parameter to Launch agent by connecting the controller
+Click on Disable WorkDir
+Availability: Set this parameter to Keep the agent online as much as possible. So, it will make sure to keep the node online as much as possible
+Click on save.
+After that you will see the below page.
+
+Run the Run from agent command line: (Unix) on the master node
+After running the command you can see the below page and you can see agent is connected over there.
+
+Now, our master slave setup is ready. We can execute the job on the agent node
+Create a new job and configure as per the below image
+
+Click on the Restrict where the project can be run and under the label expression select the label of the agent node
+Under the build steps select execute shell and add the below command
+uptime
+echo $WORKSPACE
+Click on save and apply.
+Before running the job you can verify the uptime of your agent node.
+uptime
+For my agent node it is 33 min.
+Click on build now and execute the job
+In the above image you can see the uptime is 33 min and workspace is also /opt/build/workspace/Demo-Job
+That’s it. Our setup is ready. Now, you can create different jobs and execute on the agent node as per your need.
+====================================================================================================================================================
+
+
